@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Griglia Campo Minato</title>
+
+</head>
+<body>
+    
+    <header>
+        <div class="logo_container">
+            <img src="https://www.boolean.careers/images/misc/logo.png" alt="">
+        </div>
+
+        <div class="form_container">
+            <label for="difficulty">Difficolt&agrave;: </label>
+            <select name="difficulty" id="difficulty">
+                <option value="" selected disabled hidden>Seleziona</option>
+                <option id="easy" value="Easy">Easy</option>
+                <option id="medium" value="Medium">Medium</option>
+                <option id="hard" value="Hard">Hard</option>
+            </select>
+
+            <button id="btnPlay">Play</button>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="big_container">
+            <div class="grid_container">
+               <div id="easy_container" class="container_easy">
+                   <!-- <div class="square">1</div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div>
+                   <div class="square"></div> -->
+               </div>
+
+               <div id="medium_container" class="container_medium">
+                   <!-- <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div>
+                   <div class="square medium"></div> -->
+               </div>
+
+               <div id="hard_container" class="container_hard">
+                   <!-- <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div>
+                   <div class="square hard"></div> -->
+               </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Made by Urbano <span class="greenheart">&hearts;</span>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
