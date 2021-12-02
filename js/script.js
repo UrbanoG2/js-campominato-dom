@@ -16,15 +16,17 @@ const playBtn = document.getElementById("btnPlay");
 //variabile difficoltà
 playBtn.addEventListener("click", 
     function () {
+        let easy_container = document.getElementById("easy_container");
+
+        let medium_container = document.getElementById("medium_container");
+
+        let hard_container = document.getElementById("hard_container");
 
         let difficulty =  document.getElementById("difficulty").value;
         console.log(difficulty);
 
         if (difficulty == "Easy") {
-            
-            let easy_container = document.getElementById("easy_container");
-            console.log(easy_container);
-    
+        
             easy_container.classList.add ("active");
             medium_container.classList.remove ("active");
             hard_container.classList.remove ("active");
@@ -32,18 +34,13 @@ playBtn.addEventListener("click",
             
         } else if (difficulty == "Medium") {
             
-            let medium_container = document.getElementById("medium_container");
-            console.log(medium_container);
-    
             medium_container.classList.add ("active");
             easy_container.classList.remove ("active");
             hard_container.classList.remove ("active");
 
 
         } else if (difficulty == "Hard") {
-            let hard_container = document.getElementById("hard_container");
-            console.log(hard_container);
-    
+            
             hard_container.classList.add ("active");
             medium_container.classList.remove ("active");
             easy_container.classList.remove ("active");
@@ -60,11 +57,14 @@ playBtn.addEventListener("click",
 
     const hardContainer = document.getElementById("hard_container");
 
-
+    let arrBombs = [];
     
 
         if (difficulty == "Easy") {
             //creo un elemento
+
+            arrBombs = getRandomIntIncluse (1,100);
+            console.log(arrBombs); 
 
             for (let i = 0; i < 100; i++) {
                 let easyCreated = document.createElement("div");
@@ -73,21 +73,37 @@ playBtn.addEventListener("click",
                 easyContainer.append(easyCreated);
                 console.log(easyCreated);
 
-                //creo un array per i numeri
-
-                let arrNum = [...Array(100).keys()];
-                console.log(arrNum);
-
                 easyCreated.innerHTML = i + 1;
-                
-                easyCreated.addEventListener("click", 
-                function() {
-                    this.style.backgroundColor = "blue";
-                })
+                console.log(easyCreated.innerHTML);
 
+                if (arrBombs.includes(parseInt(easyCreated.innerHTML))) {
+                    easyCreated.classList.add("is_bomb")
+                }
+
+
+                //cosa succede al click della cella
+
+                easyCreated.addEventListener("click", function() {
+                    if (easyCreated.classList.contains("is_bomb")) {
+                        //se è una bomba devo aggiungere la classe red a TUTTE le bombe
+
+                        let bombElement = document.querySelectorAll (".is_bomb");
+
+                        for (let i = 0; i < bombElement.length; i++) {
+                            bombElement[i].classList.add("red");
+                        }
+                    } else {
+                        easyCreated.classList.add("blue");
+                    }
+                })
+                
             }
+
+            
         
         } else if (difficulty == "Medium") {
+
+            arrBombs = getRandomIntIncluse (1,81);
             //creo un elemento
 
             for (let i = 0; i < 81; i++) {
@@ -98,15 +114,30 @@ playBtn.addEventListener("click",
                 console.log(mediumCreated);
 
                 mediumCreated.innerHTML = i + 1;
+                console.log(mediumCreated.innerHTML);
 
-                mediumCreated.addEventListener("click", 
-                function() {
-                    this.style.backgroundColor = "blue";
+                if (arrBombs.includes(parseInt(mediumCreated.innerHTML))) {
+                    mediumCreated.classList.add("is_bomb")
+                } 
+
+                mediumCreated.addEventListener("click", function() {
+                    if (mediumCreated.classList.contains("is_bomb")) {
+                        //se è una bomba devo aggiungere la classe red a TUTTE le bombe
+
+                        let bombElement = document.querySelectorAll (".is_bomb");
+
+                        for (let i = 0; i < bombElement.length; i++) {
+                            bombElement[i].classList.add("red");
+                        }
+                    } else {
+                        mediumCreated.classList.add("blue");
+                    }
                 })
-
             }
         
         } else if (difficulty == "Hard") {
+
+            arrBombs = getRandomIntIncluse (1,49);
             //creo un elemento
 
             for (let i = 0; i < 49; i++) {
@@ -117,22 +148,61 @@ playBtn.addEventListener("click",
                 console.log(hardCreated);
 
                 hardCreated.innerHTML = i + 1;
+                console.log(hardCreated.innerHTML);
                 
-                hardCreated.addEventListener("click", 
-                function() {
-                    this.style.backgroundColor = "blue";
-                })
+
+
+                if (arrBombs.includes(parseInt(hardCreated.innerHTML))) {
+                    hardCreated.classList.add("is_bomb")
+                } 
+
+                hardCreated.addEventListener("click", function() {
+                    if (hardCreated.classList.contains("is_bomb")) {
+                        //se è una bomba devo aggiungere la classe red a TUTTE le bombe
+
+                        let bombElement = document.querySelectorAll (".is_bomb");
+
+                        for (let i = 0; i < bombElement.length; i++) {
+                            bombElement[i].classList.add("red");
+                        }
+                    } else {
+                        hardCreated.classList.add("blue");
+                    }
+                }) 
+
 
             }
         }        
+      
 
-
-        
+    
 })
 
+//funzione per creare numeri random nell'array blackList
+function getRandomIntIncluse(min, max) {
 
+    //creo array 
+    let bombNumbers = [];
 
+    //ciclo for per inserire i numeri nell'array
+    for (let index = 0; index < 16; index++) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
 
+         //includo gli estremi
+        let randNumber = bombNumbers[index];
+        randNumber = Math.floor(Math.random() * (max - min + 1) + min);
+
+        //check
+        while (bombNumbers.includes(randNumber)){
+            randNumber = Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        bombNumbers.push(randNumber);
+        
+    }
+    return bombNumbers;
+
+}
 
 
 
